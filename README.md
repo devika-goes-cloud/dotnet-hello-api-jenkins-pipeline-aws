@@ -29,20 +29,57 @@
    - Security Group:
       - Allow SSH from Jenkins EC2 (for deployment).
       - Allow inbound port 5000 for users.
+---
+![3ec2-servers](https://github.com/user-attachments/assets/50971fbf-b283-45a1-bf56-47eebeeb0866)
+---
     
 
 ## Deployment Flow:
 
-1. Select environment (UAT or PROD) in Jenkins.
+### 1. Select environment (UAT or PROD) in Jenkins.
+---
+![env-selection](https://github.com/user-attachments/assets/76427092-fa3f-46e9-a04b-6cd8cbf577fe)
+---
+### 2. Jenkins builds and pushes Docker image from the Dockerfile to DockerHub.
+---
+![dockerhub-registry](https://github.com/user-attachments/assets/dcd6385e-64b6-452f-ad58-a6345ca45617)
+---
+### 3. Jenkins executes the CI/CD pipeline and deploys the Docker container.
 
-2. Jenkins builds Docker image from the Dockerfile.
+### The pipeline stages include:
+         
+- Checkout code from the repository.
+         
+- Set environment variables.
+         
+- Build Docker image from the Dockerfile.
+         
+- Login to Docker Hub and push the image.
+         
+- Deploy the Docker container on the target EC2 server (either UAT or Production).
+         
+- Perform health check to ensure the application is running correctly.
 
-3. Jenkins connects to target EC2 (UAT or PROD).
+<img width="1892" height="907" alt="jenkins-cicd" src="https://github.com/user-attachments/assets/c2ff191f-7f64-4250-9d0d-101c7ea442e4" />
 
-4. Stops and removes old container if running.
 
-5. Runs new Docker container with port 5000 forwarded.
+### 4. Application is accessible at:
 
-6. Application is accessible at:
+## UAT Environment:
 
-http://<EC2_PUBLIC_IP>:5000
+### http://3.110.45.169:5000/api/hello
+
+---
+![Health-check](https://github.com/user-attachments/assets/26f6d5e0-e651-43cc-b3bb-2e196c333998)
+---
+
+## PROD Environment:
+### http://13.200.250.92:5000/api/hello
+---
+![prod-server](https://github.com/user-attachments/assets/bd082b90-8e3d-49ce-a2f5-c4971b60bb07)
+---
+
+### 5. Health Check
+---
+![UAT-server-deploy](https://github.com/user-attachments/assets/dd03d79a-c567-4b47-aeef-4741c65ec903)
+---
