@@ -1,3 +1,4 @@
+# I'm using Multi-stage Dockerfile for .NET Application 
 
 # Build stage, official microsoft .NET SDK image for building app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
