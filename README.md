@@ -66,9 +66,7 @@
 ### 4. Application is accessible at:
 
 ## UAT Environment:
-
 ### http://3.110.45.169:5000/api/hello
-
 ---
 ![Health-check](https://github.com/user-attachments/assets/26f6d5e0-e651-43cc-b3bb-2e196c333998)
 ---
