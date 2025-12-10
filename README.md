@@ -60,6 +60,13 @@
          
 - Perform health check to ensure the application is running correctly.
 
+## Jenkins Global Variables / Credentials
+
+![global-var](https://github.com/user-attachments/assets/0f79607e-2d4b-45e6-bf41-3f11b7ea5a8a)
+- **dockerhub-creds**: Docker Hub username and password for pushing/pulling Docker images.  
+- **aws-ssh-key**: SSH private key for accessing EC2 instances during deployment.
+
+---
 <img width="1892" height="907" alt="jenkins-cicd" src="https://github.com/user-attachments/assets/c2ff191f-7f64-4250-9d0d-101c7ea442e4" />
 
 
