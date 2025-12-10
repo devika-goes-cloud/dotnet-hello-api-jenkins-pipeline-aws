@@ -68,8 +68,7 @@
 ## UAT Environment:
 ### http://3.110.45.169:5000/api/hello
 ---
-![Health-check](https://github.com/user-attachments/assets/26f6d5e0-e651-43cc-b3bb-2e196c333998)
----
+![Health-check-2](https://github.com/user-attachments/assets/818b954a-9e9e-4850-ba22-8e2cb0e306ae)
 
 ## PROD Environment:
 ### http://13.200.250.92:5000/api/hello
